@@ -1,0 +1,103 @@
+import RPi.GPIO as IO
+import time
+
+IO.setmode(IO.BOARD)
+IO.setup(7,IO.OUT)             # initialize GPIO Pins as outputs
+IO.setup(11,IO.OUT)
+IO.setup(13,IO.OUT)
+IO.setup(15,IO.OUT)
+IO.setup(12,IO.OUT)
+IO.setup(16,IO.OUT)
+IO.setup(18,IO.OUT)
+IO.setup(22,IO.OUT)
+IO.setwarnings(False)
+
+#def binary (i) :
+i=01
+k=0
+while(k<2) :
+    if k==0 :
+           o= i %10
+    else :
+           o= i /10  
+    if o==0 :
+                 a=0
+                 b=0
+                 c=0
+                 d=0
+                 
+    elif o==1 :
+                 a=1
+                 b=0
+                 c=0
+                 d=0
+                
+    elif o==2 :
+                 a=0
+                 b=1
+                 c=0
+                 d=0
+                 
+    elif o==3 :
+                 a=1
+                 b=1
+                 c=0
+                 d=0
+                 
+    elif o==4 :
+                 a=0
+                 b=0
+                 c=1
+                 d=0
+                 
+    elif o==5 :
+                 a=1
+                 b=0
+                 c=1
+                 d=0
+                 
+    elif o==6 :
+                 a=0
+                 b=1
+                 c=1
+                 d=0
+                 
+    elif o==7 :
+                 a=1
+                 b=1
+                 c=1
+                 d=0
+                 
+    elif o==8 :
+                 a=0
+                 b=0
+                 c=0
+                 d=1
+                 
+    elif o==9 :
+                 a=1
+                 b=0
+                 c=0
+                 d=1
+                 
+    if k==1 :
+        IO.output(7,a)
+        IO.output(11,b)
+        IO.output(13,c)
+        IO.output(15,d)
+    else:
+        IO.output(12,a)
+        IO.output(16,b)
+        IO.output(18,c)
+        IO.output(22,d)
+        
+    k=k+1
+#a=0
+#while(a<100) :
+    #binary(a)
+    #time.sleep(2.0)
+    #a=a+1
+#binary(a)
+IO.cleanup()
+
+    
